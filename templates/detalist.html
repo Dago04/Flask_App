@@ -1,4 +1,15 @@
-{% for empleado in empleados %}
-<h3>{{empleado}}</h3>
-<hr>
-{% endfor %}
+
+{% extends 'base.html' %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a la Página de Inicio</h1>
+    
+    {% for empleado in empleados %}
+        <h3>{{empleado}}</h3>
+        <hr>
+    {% endfor %}
+
+    <!-- Contenido específico de la página de inicio -->
+{% endblock %}
