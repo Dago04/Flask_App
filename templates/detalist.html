@@ -4,10 +4,13 @@
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}
-    <h1>Bienvenido a la Página de Inicio</h1>
+    <h1>Lista de empleados</h1>
     
     {% for empleado in empleados %}
         <h3>{{empleado}}</h3>
+        <a  href="{{ url_for('verEmpleado', id=empleado.empleado_id) }}" class="btn btn-info">Ver</a>
+        <a href="{{ url_for('actualizar', id=empleado.empleado_id) }}" class="btn btn-warning">Actualizar</a>
+        <a  href="{{ url_for('eliminarEmpleado', id=empleado.empleado_id) }}"class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este empleado?')">Eliminar</a>
         <hr>
     {% endfor %}
 
