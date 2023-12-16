@@ -4,10 +4,15 @@
 {% block content %}
 
 <div class="container">
-    <div class="py-5 text-center">
-        <img src="{{ url_for('static', filename='img/Fondopantalla.png')}}" alt="Imagen Fondo">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ url_for('static', filename='img/flask app.jpg')}}" alt="Imagen Fondo">
+        </div>
+        <div class="col-6">
+            <h3>Hola</h3>
+        </div>
     </div>
 </div>
-</div>
+
 
 {% endblock %}
