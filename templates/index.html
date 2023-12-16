@@ -4,15 +4,20 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-6">
-            <img src="{{ url_for('static', filename='img/flask app.jpg')}}" alt="Imagen Fondo">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-3 py-5 text-center">
+            <img src="{{ url_for('static', filename='img/flask-logo-png-transparent.png')}}" alt="Imagen Fondo"
+                class="img-fluid" width="200px" height="200">
         </div>
-        <div class="col-6">
-            <h3>Hola</h3>
+        <div class="col-sm-12 col-md-6 col-lg-9 py-5">
+            <p>Con Python Flask, puedes crear fácilmente una potente aplicación web para gestionar empleados mediante un
+                CRUD (Create, Read, Update, Delete). Flask, un framework ligero y flexible, facilita la creación de
+                rutas, manejo de formularios y conexión a una base de datos. En este caso se utilizó para crear un CRUD
+                para el manejo de empleados.</p>
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}
