@@ -1,9 +1,31 @@
-
 {% extends 'base.html' %}
 
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}
+<!-- Modal de confirmación de eliminación -->
+{% for empleado in empleados %}
+<!-- Modal de confirmación de eliminación para cada empleado -->
+<div class="modal fade" id="confirmacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminación</h5>
+
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar a {{ empleado.nombre }}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="{{ url_for('eliminarEmpleado', id=empleado.empleado_id) }}" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
 <div class="row m-5">
     <h1 class="text-center">Lista de empleados</h1>
 </div>
@@ -24,11 +46,11 @@
             <td>
                 <a href="{{ url_for('verEmpleado', id=empleado.empleado_id) }}" class="btn btn-info">Ver</a>
                 <a href="{{ url_for('actualizar', id=empleado.empleado_id) }}" class="btn btn-warning">Actualizar</a>
-                <a href="{{ url_for('eliminarEmpleado', id=empleado.empleado_id) }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este empleado?')">Eliminar</a>
+                <a id="btnEliminar" class="btn btn-danger ">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-    <!-- Contenido específico de la página de inicio -->
+<!-- Contenido específico de la página de inicio -->
 {% endblock %}
