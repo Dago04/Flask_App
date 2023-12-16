@@ -1,6 +1,29 @@
-<form action='' method="POST">
-    <p>name <input type="text" name="nombre" value="{{empleado.nombre}}" /></p>
-    <p>age <input type="integer" name="edad" value="{{empleado.edad}}" /></p>
-    <p>position <input type="text" name="puesto" value="{{empleado.puesto}}" /></p>
-    <p><input type="submit" value="Submit" /></p>
+{% extends 'base.html' %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+<header>
+    <h1 class="text-center mt-2">Crear Empleado</h1>
+</header>
+<form class="container" action='' method="POST">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" id="nombre"
+            name="nombre" value="{{empleado.nombre}}">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="number" class="form-control" id="edad"  value="{{empleado.edad}}" name="edad">
+    </div>
+    <div class="form-group">
+        <label>Puesto</label>
+        <input type="text" class="form-control" id="puesto"  value="{{empleado.puesto}}"
+            name="puesto">
+    </div >
+
+    <div class="pt-3">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
 </form>
+{% endblock %}
